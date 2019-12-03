@@ -1,0 +1,109 @@
+//Home insurance policy
+
+//Policy information includes: 
+ //   - name of insured 
+ //   - house square footage 
+ //   - amount of dwelling coverage in dollars 
+ //   - amount of contents coverage in dollars 
+ //   - amount of liability coverage in dollars 
+//Sales commission is based on the formula: commission = (liability * 30%) + ( (dwelling + contents) * 20% )
+
+
+public class Home extends Policy
+{
+	//private String name;
+	private int sqft;
+	private double amtOfDwelling;
+	private double amtOfContents;
+	private double amtOfLiability;
+
+
+//Constructor
+
+public Home()
+{
+	//name = "none";
+	sqft = 0;
+	amtOfDwelling = 0;
+	amtOfContents = 0;
+	amtOfLiability = 0;
+}
+
+//Method to compute the commission.
+public double computeCommission()
+{
+	double bonus = (amtOfLiability * .3) + ((amtOfDwelling + amtOfContents) * .2);
+	return bonus;
+}
+
+//Accessor Methods
+
+//Part of the superclass "Policy"
+/*
+public String getName()
+{
+	return name;
+}
+*/
+
+public int getSqft()
+{
+	return sqft;
+}
+
+public double getAmtOfDwelling()
+{
+	return amtOfDwelling;
+}
+
+public double getAmtOfContents()
+{
+	return amtOfContents;
+}
+
+public double getAmtOfLiability()
+{
+	return amtOfLiability;
+}
+
+//Mutators
+
+//Part of the superclass "Policy"
+/*
+public void setName(String a)
+{
+	name = a;
+}
+*/
+
+public void setSqft(int a)
+{
+	sqft = a;
+}
+
+public void setAmtOfDwelling(double a)
+{
+	amtOfDwelling = a;
+}
+
+public void setAmtOfContents(double a)
+{
+	amtOfContents = a;
+}
+
+public void setAmtOfLiability(double a)
+{
+	amtOfLiability = a;
+}
+
+//toString 
+
+public String toString()
+{
+	String policyString = super.toString();
+	String result;
+	result = "Name of insured: " + policyString + "\n" + "Square Footage of House " + sqft + "\n" + "Dwelling Coverage: " + amtOfDwelling + "\n" + "Contents Coverage: " + amtOfContents + "\n" + "Liability Coverage: " + amtOfLiability;
+	return result;
+}
+
+}
