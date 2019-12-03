@@ -1,0 +1,75 @@
+import java.util.Scanner;
+import java.lang.Object;
+
+public class Student implements Comparable<Object>
+{
+	private String firstName, lastName;
+	private int testScore;
+	
+	//Constructor
+	public Student (String firstName, String lastName, int testScore)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.testScore = testScore;
+	}
+	
+	public String toString ()
+	{
+		return "First Name: " + firstName + "\n" + "Last Name: " + lastName + "\n" + "Test Score: " + testScore;
+	}
+	
+	//The compareTo() method of Integer class of java.lang package compares two Integer objects numerically and returns the value 0 if this Integer is equal to the argument Integer; a value less than 0 if this Integer is numerically less than the argument Integer; and a value greater than 0 if this Integer is numerically greater than the argument Integer (signed comparison). 
+	public int compareTo (Object other)
+	{
+		int result = 0;
+		
+		//Step 1: get the score of the object passed into here
+		//Casting
+		int otherScore = ((Student)other).getTestScore();
+		
+		//Step 2; Determine if the scores are equal
+		
+		//write the comparison if statements 
+		
+		if (testScore == otherScore)
+			result = 0;
+		else if (testScore > otherScore)
+			result = 1;
+		else if (testScore < otherScore)
+			result = -1;
+		
+		return result;
+	}
+	
+	
+	public String getFirstName()
+	{
+		return firstName;
+	}
+	
+	public String getLastName()
+	{
+		return lastName;
+	}
+	
+	public int getTestScore()
+	{
+		return testScore;
+	}
+	
+	public void setFirstName(String first)
+	{
+		firstName = first;
+	}
+	
+	public void setLastName(String last)
+	{
+		lastName = last;
+	}
+	
+	public void setTestScore(int testScore)
+	{
+		this.testScore = testScore;
+	}
+}
