@@ -1,0 +1,112 @@
+// Auto insurance policy
+
+//Policy information includes: 
+ //   - name of insured 
+ //   - make and model of automobile 
+ //   - amount of liability coverage in dollars 
+ //   - amount of collision coverage in dollars 
+//Sales commission is based on the formula: commission = (liability + collision) * 30%
+
+public class Auto extends Policy
+{
+	//private String name;
+	private String make;
+	private String model;
+	
+	private double amtOfLiability;
+	private double amtOfCollision;
+	
+	//Constructor. Takes same name as class, and sets initializes the attributes.
+	public Auto()
+	{
+		super();
+		//name = "none";
+		make = "none";
+		model = "none";
+		amtOfLiability = 0;
+		amtOfCollision = 0;
+	}
+	
+	public Auto(/* String name, */ String make, String model, double a, double b)
+	{
+		super();
+		//this.name = name;
+		this.make = make;
+		this.model = model;
+		double amtOfLiability = a;
+		double amtOfCollision = b;
+	}
+
+	public double computeCommission()
+	
+	//Overriding
+	{
+		double commission = (amtOfLiability + amtOfCollision) * .3;
+		return commission;
+	}
+	
+	//getters and setters
+	
+	/*
+	public String getName()
+	{
+		return name;
+	}
+	*/
+	
+	public String getMake()
+	{
+		return make;
+	}
+	
+	public String getModel()
+	{
+		return model;
+	}
+	
+	/*
+	public void setName(String a)
+	{
+		name = a;
+	}
+	*/
+	
+	public void setMake(String a)
+	{
+		make = a;
+	}
+	
+	public void setModel(String a)
+	{
+		model = a;
+	}
+	
+	public double getAmtOfLiability(double a)
+	{
+		return amtOfLiability;
+	}
+	
+	public double getAmtOfCollision(double a)
+	{
+		return amtOfCollision;
+	}
+	
+	
+	public void setAmtOfLiability(int a)
+	{
+		amtOfLiability = a;
+	}
+	
+	public void setAmtOfCollision(int a)
+	{
+		amtOfCollision = a;
+	}
+	
+	public String toString()
+	{
+		String policyString = super.toString();
+		String result; 
+		result = "Name of Insured: " + policyString + "\n" + "Make of auto: " + make + "\n" + "Model: " + model + "\n" + "Liability coverage: " + "\n" + amtOfLiability + "\n" + "Collision coverage: " + amtOfCollision;
+		return result;
+	}
+}
