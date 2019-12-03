@@ -1,0 +1,66 @@
+public class MonetaryValue {
+	
+	private double amount;
+	
+	//Constructor
+	public MonetaryValue(double amount)
+	{
+		this.amount = amount;
+	}
+	
+	public String printMessage()
+	{
+		return "To get this in change, you need: ";
+	}
+	
+	public void getBills(double amount)
+	{
+		
+		double amount100 = amount * 100;
+		
+		//System.out.println(amount100);
+				
+		//starting to run through the amounts using %
+		double tens = (amount100 / 1000);
+		System.out.println((int)tens + " ten dollar bill(s)");
+		amount100 = amount100 % 1000;
+		
+		double fives = amount100 / 500;
+		System.out.println((int)fives + " five dollar bill(s)");
+		amount100 = amount100 % 500;
+		
+		double ones = amount100 / 100;
+		System.out.println((int)ones + " one dollar bill(s)");
+		amount100 = amount100 % 100;
+		
+		double quarters = amount100 / 25;
+		System.out.println((int)quarters + " quarter(s)");
+		amount100 = amount100 % 25;
+		
+		double dimes = amount100 / 10;
+		System.out.println((int)dimes + " dime(s)");
+		amount100 = amount100 % 10;
+		
+		double nickels = amount100 / 5;
+		System.out.println((int)nickels + " nickel(s)");
+		amount100 = amount100 % 5;
+		
+		double pennies = amount100;
+		System.out.println((int)pennies + " pennies or penny");
+	}
+	
+	public double getAmount()
+	{
+		return amount;
+	}
+	
+	public void setAmount(double amount)
+	{
+		this.amount = amount;
+	}
+	
+	public String toString ()
+	{
+		return "Amount entered is: " + amount;
+	}
+}
