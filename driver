@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class CommissionCalculatorDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		CommissionCalculator c1 = new CommissionCalculator();
+		c1.run();
+	}
+}
