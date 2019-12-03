@@ -1,0 +1,53 @@
+public class RationalNumber 
+{
+	//iterative version
+	
+	public int num1;
+	public int num2;
+	
+	public void RationalNumber(int num1, int num2)
+	{
+		this.num1 = num1;
+		this.num2 = num2;
+	}
+	
+	public void setNum1(int num1)
+	{
+		this.num1 = num1;
+	}
+	
+	public int getNum1()
+	{
+		return num1;
+	}
+	
+	public void setNum2(int num2)
+	{
+		this.num2 = num2;
+	}
+	
+	public int getNum2()
+	{
+		return num2;
+	}
+	
+	public void gcd (int num1, int num2)
+	{
+		int a = num1;
+		int b = num2;
+		
+		
+		if (a != 0 && b != 0)
+		{
+			int c = a%b;
+			a=b;
+			b=c;
+			gcd(a,b); //recursion using the new values after modulus 
+		}
+		
+		else //base case where the % is equal to 0
+		{
+			System.out.println("The greatest common denominator is " + a);
+		}
+	}
+}
