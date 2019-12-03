@@ -1,0 +1,24 @@
+import java.util.*;
+public class RationalNumberDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Please enter an integer: ");
+		
+		Scanner scan = new Scanner(System.in);
+		int a = scan.nextInt();
+		
+		System.out.println("Please enter another integer: ");
+		int b = scan.nextInt();
+		
+		
+		
+		
+		RationalNumber obj = new RationalNumber();
+		
+		obj.gcd(a, b);
+		
+		}
+		
+	}
