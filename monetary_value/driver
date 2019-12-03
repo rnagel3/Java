@@ -1,0 +1,44 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class MonetaryValueDriver {
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+		//initialize the variable amount
+		double amount = 0;
+		
+		MonetaryValue a = new MonetaryValue(amount);
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a monetary amount less than $100 or \"quit\" to quit: ");
+		String input = scan.next();
+		
+		while (!input.equals("quit"))
+		{	
+			try 
+			{
+				amount = Double.parseDouble(input);
+				System.out.println(" ");
+				System.out.println("You entered: $" + amount + ". " + "To get this in change, you will need: ");
+				a.getBills(amount);
+			}
+			
+			catch (InputMismatchException e)
+			{
+				System.out.println("EXCEPTION: Invalid Input.");
+			}
+			
+			catch (NumberFormatException e)
+			{
+				System.out.println("EXCEPTION: Invalid Input.");
+			}
+			
+			System.out.print("Enter a monetary amount less than $100 or \"quit\" to quit: ");
+			input = scan.next();
+		}
+	}
+}
