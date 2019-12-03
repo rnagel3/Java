@@ -1,0 +1,43 @@
+public abstract class Policy 
+{
+	//what the class knows. the only variable common to the children. using protected as the modifier
+	protected String name;
+	
+	//Constructor. Takes same name as class and the input parameter. 
+	
+	public Policy(String name)
+	{
+		this.name = name;
+	}
+	
+	//Empty Constructor to initialize the instance variable
+	
+	public Policy()
+	{
+		this.name = "none";
+	}
+	
+	//computeCommission method
+	public double computeCommission()
+	{
+		double commission = 0;
+		return commission;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public String toString()
+	{
+		String result;
+		result = name;
+		return result;
+	}
+}
