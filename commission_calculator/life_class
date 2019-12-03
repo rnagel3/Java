@@ -1,0 +1,97 @@
+/* Life insurance policy
+
+//Policy information includes: 
+  //  - name of insured 
+    //- age of insured 
+    //- amount of term life coverage in dollars 
+//Sales commission is based on the following formula: commission = term life * 20%
+
+
+                   Life
+      			----------------------------
+      				"knows"		| 	"does"
+      			----------------------------
+      		name of insured 	| calculates commission, returns result
+      		age of insured		| 
+      		term life amt in $$ | gets name
+      							| gets age
+      							| gets term life amt in $$
+      							|
+      							| returns a String description of the class
+      		
+*/      		
+public class Life extends Policy
+{
+	//private String name;
+	private int age;
+	private double termAmount;
+
+
+//Constructor: Sets the initial values
+
+	public Life() 
+	{
+		//name = "none";
+		age = 0;
+		termAmount = 0;
+	}
+	
+	
+	//Method to compute the commission, based on the termAmount
+	public double computeCommission()
+	{
+		double bonus = termAmount * .2;
+		return bonus;
+	}
+	
+	
+	//Accessor methods
+	
+	//Part of the superclass "Policy"
+	/*
+	public String getName()
+	{
+		return name;
+	}
+	*/
+	
+	public int getAge()
+	{
+		return age;
+	}
+	
+	public double getTermAmount()
+	{
+		return termAmount;
+	}
+	
+	//Mutator methods
+	
+	/*
+	public void setName(String a)
+	{
+		name = a;
+	}
+	*/
+	
+	public void setAge(int a)
+	{
+		age = a;
+	}
+	
+	public void setTermAmount(double a)
+	{
+		termAmount = a;
+	}
+	
+	//toString method
+	
+	public String toString()
+	{
+		String policyString = super.toString();
+		String result;
+		result = "Name of insured: " + policyString + "\n" + "Age of insured " + age + "\n" + "Term Amount: " + termAmount;
+		return result;
+	}
+
+}
