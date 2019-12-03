@@ -1,0 +1,26 @@
+public class Sorting 
+{
+	//Sorts the array using either selection sort or insertion sort
+	
+	public static void selectionSort (Comparable<Object>[] list)
+	{
+		//System.out.println("SORTING TEST 1");
+		int min;
+		Comparable<Object> temp; //temporary variable
+		
+		for (int index = 0; index < list.length-1; index++)
+		{
+			//there is one character in this method that needs to be changed to sort in descending order
+			
+			min = index;
+			for (int scan = index+1; scan < list.length; scan++)
+				if (list[scan].compareTo(list[min]) > 0)
+					min = scan;
+			
+			//swap the values 
+			temp = list[min];
+			list[min] = list[index];
+			list[index] = temp;
+		}
+	}
+}
