@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class SortScoreDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//creating the empty array
+		//Student[] entries = new Student[5];
+		
+		//loop through this to add 5 students to the array
+	
+		ListBuilder a = new ListBuilder();
+		
+		a.run();
+	}
+
+}
