@@ -1,0 +1,178 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
+
+public class CommissionCalculator {
+
+	private ArrayList<Policy> policies;
+	//What the class knows. It knows the objects from Home, Life, and Auto classes.
+	
+	private Auto a1;
+	private Home h1;
+	private Life l1;
+	
+	// Constructor class with same name as class
+	
+	public CommissionCalculator()
+	{
+		policies = new ArrayList<Policy>();
+		
+		//You don't need these anymore. Essentially, they are going to be created once you choose to select them. 
+		
+		//a1 = new Auto();
+		//h1 = new Home();
+		//l1 = new Life();
+	}
+	
+	//Policy p = new Policy();
+	//Creating an ArrayList
+	
+	
+	
+	//Adding the policy objects to the array 
+
+	
+	//policies.add( new Auto());
+	//policies.add (new Life());
+	
+	
+	//Run Method performs the menu presentation, navigation, and calculation
+	//Just need to figure out how to loop it back to the menu until someone presses 7
+	
+	 public void run()
+	 
+	{
+		 	Scanner scan = new Scanner(System.in);
+		 	boolean mainLoop = true; 
+		 	
+		 	int selection;
+		 	do{
+		 	System.out.println();
+		 	System.out.println("-----------------------------");
+			System.out.println("Welcome to Parkland Insurance");
+			System.out.println("-----------------------------");
+			System.out.println("Enter any of the following:");
+			System.out.println("1) Enter auto insurance policy information");
+			System.out.println("2) Enter home insurance policy information");
+			System.out.println("3) Enter life insurance policy information");
+			System.out.println("4) Print all sales entered");
+			System.out.println("5) Quit");
+			System.out.println();
+			selection = scan.nextInt();
+			
+			switch (selection){
+			case 1:
+				System.out.println("For auto insurance: Enter Name of Insured");
+				Scanner in = new Scanner(System.in);
+				String name = in.nextLine();
+				
+				//UPDATE: create the object once the case has been selected
+				a1 = new Auto();
+				
+				a1.setName(name);
+				//System.out.println("TEST 1" + " " + a1.getName());
+				
+				System.out.println("For auto insurance: Enter Make of Vehicle");
+				Scanner in2 = new Scanner(System.in);
+				String make = in2.nextLine();
+				a1.setMake(make);
+				
+				System.out.println("For auto insurance: Enter Model of Vehicle");
+				Scanner in3 = new Scanner(System.in);
+				String model = in3.nextLine();
+				a1.setModel(model);
+				
+				System.out.println("For auto insurance: Enter Amount of Collision Insurance");
+				Scanner in4 = new Scanner(System.in);
+				int amtOfCollision = in4.nextInt();
+				a1.setAmtOfCollision(amtOfCollision);
+				
+				System.out.println("For auto insurance: Enter Amount of Liability Insurance");
+				Scanner in5 = new Scanner(System.in);
+				int amtOfLiability = in5.nextInt();
+				a1.setAmtOfLiability(amtOfLiability);
+				
+				//This is adding the Auto object reference variable to the policies ArrayList
+				
+				policies.add(a1);
+				//Even though it's the same object reference (a1), it will add a unique object to the array each time case 1 is called.  
+				
+				break;
+						
+			case 2:
+				System.out.println("For home insurance: Enter Name of Insured");
+				Scanner in6 = new Scanner(System.in);
+				String homeName = in6.nextLine();
+				//UPDATE: create the object once the case has been selected
+				h1 = new Home();
+				
+				h1.setName(homeName);
+				//System.out.println("TEST 1" + " " + h1.getName());
+				
+				System.out.println("For home insurance: Enter the Square Feet");
+				Scanner in7 = new Scanner(System.in);
+				int sqft = in7.nextInt();
+				h1.setSqft(sqft);
+				
+				System.out.println("For home insurance: Enter Amount of Dwelling");
+				Scanner in8 = new Scanner(System.in);
+				int amtOfDwelling = in8.nextInt();
+				h1.setAmtOfDwelling(amtOfDwelling);
+				
+				System.out.println("For home insurance: Enter Amount of Contents");
+				Scanner in9 = new Scanner(System.in);
+				int amtOfContents = in9.nextInt();
+				h1.setAmtOfContents(amtOfContents);
+				
+				System.out.println("For home insurance: Enter Amount of Liability");
+				Scanner in10 = new Scanner(System.in);
+				int homeAmtOfLiability = in10.nextInt();
+				h1.setAmtOfLiability(homeAmtOfLiability);
+				
+				policies.add(h1);
+				break;
+				
+			case 3:
+				System.out.println("For life insurance: Enter Name of Insured");
+				Scanner in11 = new Scanner(System.in);
+				String lifeName = in11.nextLine();
+				
+				//UPDATE: create the object once the case has been selected
+				l1 = new Life();
+				
+				l1.setName(lifeName);
+				//System.out.println("TEST 1" + " " + l1.getName());
+				
+				System.out.println("For life insurance: Enter age of the insured");
+				Scanner in12 = new Scanner(System.in);
+				int age = in12.nextInt();
+				l1.setAge(age);
+				
+				System.out.println("For life insurance: Enter Term Amount");
+				Scanner in13 = new Scanner(System.in);
+				int termAmount = in13.nextInt();
+				l1.setTermAmount(termAmount);
+				
+				policies.add(l1);
+				
+				break;
+				
+			case 4:
+				for ( Policy pp : policies )
+				{
+					System.out.println("Commission is: " + pp.computeCommission());
+					System.out.println( );
+					System.out.println(pp);
+					System.out.println( );
+				}
+			
+			case 5:
+				//Quit
+				break;
+			}
+			
+			}while(selection != 5);
+		 }
+	}
